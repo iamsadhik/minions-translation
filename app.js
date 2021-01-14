@@ -7,6 +7,8 @@ buttonTrans.addEventListener("click", clickHandler)
 
 var serverUrl="https://api.funtranslations.com/translate/minion.json"
 
+// var serverUrl="https://api.funtranslations.com/translate/dothraki.json"
+
 function getUrl(text)
 {
     return serverUrl + "?" + "text=" +text
@@ -23,8 +25,8 @@ function clickHandler(){
     fetch(getUrl(inputTxt))
     .then(response=>response.json())
     .then(json=>{
-    var translated=json.contents.translated;
-    outPut.innerText=translated;
+    var translatedText = json.contents.translated;
+    outPut.innerText=translatedText;
     })
 }
 
